@@ -1,0 +1,289 @@
+/*General Configs*/
+:root{
+    --secondary-color: #AFAFAF;
+    --accent-color: #6E6FE4;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+section{
+    padding: 3em;
+}
+body{
+    background: #181F25;
+    margin: 0;
+    font-family: 'SF Pro Display';
+    color: white;
+}
+#background{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: relative; 
+}
+#background:after{
+    content: "";
+    background: url(images/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+h3{
+    font-size: 2em;
+    margin: 0 0 1em 0;
+}
+/*Navigation Bar*/
+
+.navbar{
+    padding: 1.5em;
+    .Logo{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.5em;
+        display:inline;
+        color: white;
+        padding: .5em;
+        img{
+            vertical-align:bottom;
+            width: 30px;
+            margin-right: 5px;
+        }
+    }
+    .container{
+        display: flex;
+        place-content: space-between;
+    }
+    nav{
+        display: none;
+        position: fixed;
+        z-index: 999;
+        width: 66%;
+        right: 0;
+        top: 0;
+        background: #181F25;
+        height: 100vh;
+        padding: 1em;
+        ul.primary-nav{
+            margin-top: 5em;
+        }
+        li{
+            a{
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding: .7em;
+                font-size: 1.3em;
+                text-align: right;
+
+                &:hover{
+                    font-weight: bold;
+                }
+            }
+        }
+        .secondary-cta{
+            margin-top: 2em;
+            color: var(--accent-color);
+            img{
+                width: 1.1em;
+            }
+        }
+    }
+    .mobile-menu{
+        cursor: pointer;
+    }
+    .mobile-menu-exit{
+        cursor: pointer;
+    }
+    .mobile-menu-exit{
+        float: right;
+        margin: .7em;
+    }
+}
+nav.menu-btn{
+    display: block;
+}
+
+/*Hero Section*/
+.hero{
+    height: 85%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 2em;
+    .title{
+        h1{
+            font-size: 4em;
+            margin: 0;
+            padding-right: 100px;
+        }
+        .subhead{
+            color: var(--secondary-color);
+            font-size: 1.6em;
+            max-width: 15em;
+        }
+    }
+    .primary-cta{
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: var(--accent-color);
+        padding: 1em 1.5em;
+        border-radius: .8em;
+        display: inline-block;
+        margin-top: 5vh;
+        img{
+            margin-right: .2em;
+            width: 17px;
+        }
+    }
+}
+
+
+/*Tours Section*/
+
+.Tours{
+    padding: 3em;
+    .card{
+        background: #212A32;
+        text-align: left;
+        width: 1fr;
+        max-width: 22em;
+        border-radius: 1em;
+
+        transition: transform 500ms ease;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        p{
+            padding: 0 1.2em .2em 1.2em;
+            font-size: 1.3em;
+            color: var(--secondary-color);
+        }
+        h2{
+            padding: 0.5em 0 0 0.8em;
+            font-size: 2em;
+            margin: 0;
+        }
+    }
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.Tours ul{
+    display: grid;
+    align-items: center;
+    gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
+    justify-content: center;
+}
+
+/*Contact Section*/
+.contact-section{
+    background-color: #161C22;
+    
+    label{
+        display: block;
+        font-size: 1.2em;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+    input, textarea {
+        width: 100%;
+        padding: .8em;
+        border-radius: 1em;
+        border: 1px solid #212A32;
+        box-sizing: border-box;
+        background-color: #212A32;
+        resize: none;
+        outline: none;
+        color: white;
+        font-family: 'SF Pro Display';
+        font-size: 1em;
+    }
+    input[type="submit"]{
+        background-color: var(--accent-color);
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+        border: none;
+        display: inline-block;
+        width: unset;
+        margin: 1em 0;
+        padding: 1em 1.5em;
+        cursor: pointer;
+    }
+}
+
+
+/*Footer*/
+
+.footer{
+    background-color: #12171b;
+    padding: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*
+Media Querys for responsive designs
+*/
+
+@media only screen and (min-width: 768px){
+    .mobile-menu, .mobile-menu-exit{
+        display: none;
+    }
+
+    .navbar .container{
+        display: grid;
+        grid-template-columns: 200px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav{
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+        ul{
+            display: flex;
+        }
+        a{
+            padding: 0;
+        }
+        ul.primary-nav{
+            margin: 0;
+        }
+        .secondary-cta{
+            margin: 0;
+        }
+    }
+    .left-col{
+        .primary-cta{
+            margin-top: 220px;
+        }
+    }
+    .contact-section{
+        position: relative;
+    }
+    
+}
+@media only screen and (min-width: 1180px) {
+    .container{
+        width: 1120px;
+        margin: 0 auto;
+    }
+}
